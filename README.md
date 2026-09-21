@@ -1,11 +1,11 @@
 # Copilot Agent MCP Lab
 
-A small learning project for understanding:
+以下を学ぶための小規模なプロジェクトです:
 
 - AGENTS.md
-- Custom agents
-- Prompt files
-- Instruction files
+- カスタムエージェント
+- プロンプトファイル
+- インストラクションファイル
 - Model Context Protocol (MCP)
 
-The sample application is a simple FastAPI Todo API.
+サンプルアプリケーションはシンプルなFastAPI Todo APIです。

@@ -1,13 +1,13 @@
 ---
-description: Create tests for current implementation
+description: 現在の実装用のテストを作成する
 ---
 
-Analyze the target implementation and add appropriate tests.
+対象の実装を分析し、適切なテストを追加してください。
 
-Include:
+含める項目:
 
-- Normal cases
-- Error cases
-- Boundary conditions where relevant
+- 正常系
+- エラーケース
+- 関連する場合の境界条件
 
-Run the tests after implementation.
+実装後、テストを実行してください。

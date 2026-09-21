@@ -1,31 +1,31 @@
-# Project Guidance
+# プロジェクトガイダンス
 
-## Project
+## プロジェクト
 
-This project is a small FastAPI Todo API used to learn AI-assisted development.
+本プロジェクトは、AI支援開発を学ぶために使用される小規模なFastAPI Todo APIです。
 
-## Architecture
+## アーキテクチャ
 
-Use the following dependency direction:
+以下の依存関係の方向を使用します:
 
 Router
 → Service
 → Repository
 
-- Routers handle HTTP concerns.
-- Services contain business logic.
-- Repositories handle data access.
-- Routers must not access repositories directly.
+- RouterはHTTP関連の処理を担当します。
+- Serviceはビジネスロジックを含みます。
+- Repositoryはデータアクセスを担当します。
+- Routerはリポジトリに直接アクセスしてはいけません。
 
-## Development Policy
+## 開発ポリシー
 
-- Keep changes small and focused.
-- Preserve existing API behavior unless explicitly requested.
-- Add tests for new behavior.
-- Do not delete tests to make implementation pass.
+- 変更は小さく、焦点を絞ったものにしてください。
+- 明示的に要求されない限り、既存のAPI動作を保持してください。
+- 新しい動作についてはテストを追加してください。
+- テストを削除して実装をパスさせないでください。
 
-## Security
+## セキュリティ
 
-- Do not hard-code credentials.
-- Do not commit `.env` files.
-- Do not log secrets or tokens.
+- 認証情報をハードコードしないでください。
+- `.env`ファイルをコミットしないでください。
+- シークレットやトークンをログに記録しないでください。

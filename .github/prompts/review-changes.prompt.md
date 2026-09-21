@@ -1,16 +1,16 @@
 ---
-description: Review current code changes
+description: 現在のコード変更をレビューする
 ---
 
-Review the current changes.
+現在の変更をレビューしてください。
 
-Check:
+チェック項目:
 
-- Correctness
-- Architecture
-- Security
-- Maintainability
-- Test coverage
+- 正確性
+- アーキテクチャ
+- セキュリティ
+- 保守性
+- テストカバレッジ
 
-Prioritize findings by severity.
-Do not modify code.
+重要度で結果を優先順位付けしてください。
+コードを変更しないでください。

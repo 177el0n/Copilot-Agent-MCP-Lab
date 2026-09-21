@@ -1,15 +1,15 @@
 ---
-description: Implement a small application feature
+description: 小規模なアプリケーション機能を実装する
 ---
 
-Implement the requested feature.
+リクエストされた機能を実装してください。
 
-Process:
+処理フロー:
 
-1. Understand the requirement.
-2. Inspect related files.
-3. Identify affected layers.
-4. Implement the smallest reasonable change.
-5. Add tests.
-6. Run relevant tests.
-7. Summarize the implementation.
+1. 要件を理解してください。
+2. 関連ファイルを確認してください。
+3. 影響を受けるレイヤーを特定してください。
+4. 最小限の合理的な変更を実装してください。
+5. テストを追加してください。
+6. 関連するテストを実行してください。
+7. 実装をまとめてください。

@@ -2,10 +2,10 @@
 applyTo: "**/*.py"
 ---
 
-# Python Coding Rules
+# Python コーディングルール
 
-- Use type hints.
-- Follow PEP 8.
-- Prefer small functions.
-- Avoid mutable default arguments.
-- Use descriptive function and variable names.
+- 型ヒントを使用してください。
+- PEP 8に従ってください。
+- 小さな関数を推奨してください。
+- ミュータブルなデフォルト引数を避けてください。
+- 説明的な関数と変数名を使用してください。

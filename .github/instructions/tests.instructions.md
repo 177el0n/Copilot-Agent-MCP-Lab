@@ -2,10 +2,10 @@
 applyTo: "tests/**/*.py"
 ---
 
-# Test Rules
+# テストルール
 
-- Use pytest.
-- Cover normal cases.
-- Cover error cases where applicable.
-- Keep each test focused on one behavior.
-- Use descriptive test names.
+- pytestを使用してください。
+- 正常系をカバーしてください。
+- 該当する場合はエラーケースをカバーしてください。
+- 各テストを1つの動作に焦点を当ててください。
+- 説明的なテスト名を使用してください。
