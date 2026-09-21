@@ -1,5 +1,12 @@
 from datetime import datetime
 from typing import Optional
+from enum import Enum
+
+
+class Priority(str, Enum):
+    HIGH = "high"
+    MEDIUM = "medium"
+    LOW = "low"
 
 
 class Todo:
@@ -9,12 +16,14 @@ class Todo:
         title: str,
         description: Optional[str] = None,
         completed: bool = False,
+        priority: Priority = Priority.MEDIUM,
         created_at: Optional[datetime] = None
     ):
         self.id = id
         self.title = title
         self.description = description
         self.completed = completed
+        self.priority = priority
         self.created_at = created_at or datetime.now()
 
 
@@ -23,13 +32,14 @@ class TodoRepository:
         self._todos: dict[int, Todo] = {}
         self._next_id = 1
 
-    def create(self, title: str, description: Optional[str] = None, completed: bool = False) -> Todo:
+    def create(self, title: str, description: Optional[str] = None, completed: bool = False, priority: Priority = Priority.MEDIUM) -> Todo:
         """Create a new todo and save it."""
         todo = Todo(
             id=self._next_id,
             title=title,
             description=description,
-            completed=completed
+            completed=completed,
+            priority=priority
         )
         self._todos[self._next_id] = todo
         self._next_id += 1
@@ -43,7 +53,7 @@ class TodoRepository:
         """Get all todos."""
         return list(self._todos.values())
 
-    def update(self, todo_id: int, title: Optional[str] = None, description: Optional[str] = None, completed: Optional[bool] = None) -> Optional[Todo]:
+    def update(self, todo_id: int, title: Optional[str] = None, description: Optional[str] = None, completed: Optional[bool] = None, priority: Optional[Priority] = None) -> Optional[Todo]:
         """Update a todo."""
         todo = self._todos.get(todo_id)
         if todo is None:
@@ -54,6 +64,8 @@ class TodoRepository:
             todo.description = description
         if completed is not None:
             todo.completed = completed
+        if priority is not None:
+            todo.priority = priority
         return todo
 
     def delete(self, todo_id: int) -> bool:
