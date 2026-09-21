@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.models import TodoCreate, TodoResponse
+from app.models import TodoCreate, TodoResponse, Priority
 from app.services.todo_service import TodoService
 from app.repositories.todo_repository import TodoRepository
 
@@ -17,13 +17,15 @@ def create_todo(todo: TodoCreate) -> TodoResponse:
     try:
         created_todo = service.create_todo(
             title=todo.title,
-            description=todo.description
+            description=todo.description,
+            priority=todo.priority
         )
         return TodoResponse(
             id=created_todo.id,
             title=created_todo.title,
             description=created_todo.description,
             completed=created_todo.completed,
+            priority=created_todo.priority,
             created_at=created_todo.created_at
         )
     except ValueError as e:
@@ -41,6 +43,7 @@ def get_todo(todo_id: int) -> TodoResponse:
         title=todo.title,
         description=todo.description,
         completed=todo.completed,
+        priority=todo.priority,
         created_at=todo.created_at
     )
 
@@ -55,6 +58,7 @@ def get_all_todos() -> list[TodoResponse]:
             title=todo.title,
             description=todo.description,
             completed=todo.completed,
+            priority=todo.priority,
             created_at=todo.created_at
         )
         for todo in todos
@@ -68,7 +72,8 @@ def update_todo(todo_id: int, todo: TodoCreate) -> TodoResponse:
         todo_id=todo_id,
         title=todo.title,
         description=todo.description,
-        completed=todo.completed
+        completed=todo.completed,
+        priority=todo.priority
     )
     if not updated_todo:
         raise HTTPException(status_code=404, detail="Todo not found")
@@ -77,6 +82,7 @@ def update_todo(todo_id: int, todo: TodoCreate) -> TodoResponse:
         title=updated_todo.title,
         description=updated_todo.description,
         completed=updated_todo.completed,
+        priority=updated_todo.priority,
         created_at=updated_todo.created_at
     )
 
